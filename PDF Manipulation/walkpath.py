@@ -25,7 +25,7 @@ def path(mypath):
     return f
 
 # path(".")
-ar = path("C:\\Users\\maste\\Dropbox\\XX\\iPhone Text Backup 1\\")
+ar = path("C:\\Users\\maste\\Dropbox\\XXX\\iPhone Text Backup 2\\")
 # print("THE" +str(ar))
 # print(ar[0])
 # result = remove_duplicates(ar)
