@@ -22,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MergeTwoFiles.py" />
+    <Compile Include="PDFv3.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="WalkPath.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
