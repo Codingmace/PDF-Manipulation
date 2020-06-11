@@ -2,282 +2,1064 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>606</height>
+    <width>1000</width>
+    <height>750</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>750</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>750</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tab_4">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The main landing and selection page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <widget class="QFrame" name="dnd">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>20</y>
-      <width>711</width>
-      <height>531</height>
+      <x>90</x>
+      <y>120</y>
+      <width>750</width>
+      <height>450</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
+    <property name="minimumSize">
+     <size>
+      <width>750</width>
+      <height>450</height>
+     </size>
     </property>
-    <widget class="QWidget" name="tab_1">
+    <property name="maximumSize">
+     <size>
+      <width>750</width>
+      <height>450</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="1">
+      <widget class="QTableWidget" name="Selectioned">
+       <column>
+        <property name="text">
+         <string>Filename</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Group</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Size</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QTreeWidget" name="treeWidget_2">
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QWidget" name="widget" native="true">
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QTreeWidget" name="treeWidget">
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="Options">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>580</y>
+      <width>821</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1000</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="Merge">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Merge</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Split">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Seperate</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Compress">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Compress</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="OCR">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Searchable</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Special">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Special</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Statistics">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Statistics</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Help">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Help</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>851</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Welcome to my PDF program&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you have any questions press the help button&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>410</y>
+      <width>491</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>401</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Put the information here when it starts&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>441</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>180</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ELAPSE TIME</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="Helpwidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>70</y>
+      <width>461</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>5</number>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="merge">
      <attribute name="title">
-      <string>Compress</string>
+      <string>Merge</string>
      </attribute>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QPlainTextEdit" name="information">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>150</y>
-        <width>621</width>
-        <height>311</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="textEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>50</y>
-        <width>631</width>
-        <height>71</height>
+        <x>21</x>
+        <y>21</y>
+        <width>351</width>
+        <height>192</height>
        </rect>
       </property>
       <property name="acceptDrops">
        <bool>false</bool>
       </property>
-      <property name="autoFillBackground">
-       <bool>true</bool>
+      <property name="plainText">
+       <string>The merging function merges pdf based on the order they are presented. Be careful because more than 1 and it will do based on how it wants and you cant do shit</string>
       </property>
-      <property name="readOnly">
-       <bool>true</bool>
+     </widget>
+     <widget class="QPushButton" name="Exit">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>220</y>
+        <width>75</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="seperate">
+     <attribute name="title">
+      <string>Seperate</string>
+     </attribute>
+     <widget class="QPushButton" name="Exit_2">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>220</y>
+        <width>75</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>351</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Drop Files or folders here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enter Information Here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="compress">
      <attribute name="title">
-      <string>Rearrange</string>
+      <string>Compress</string>
      </attribute>
-     <widget class="QFrame" name="frame_3">
+     <widget class="QPushButton" name="Exit_3">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>140</y>
-        <width>621</width>
-        <height>311</height>
+        <x>160</x>
+        <y>220</y>
+        <width>75</width>
+        <height>25</height>
        </rect>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+      <property name="text">
+       <string>Exit</string>
       </property>
      </widget>
      <widget class="QTextEdit" name="textEdit_3">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>40</y>
-        <width>631</width>
-        <height>71</height>
+        <y>20</y>
+        <width>351</width>
+        <height>181</height>
        </rect>
       </property>
       <property name="acceptDrops">
        <bool>false</bool>
-      </property>
-      <property name="autoFillBackground">
-       <bool>true</bool>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Drop Files or folders here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enter Information Here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_3">
+    <widget class="QWidget" name="searchable">
      <attribute name="title">
-      <string>Split</string>
+      <string>Searchable</string>
      </attribute>
-     <widget class="QFrame" name="frame_4">
+     <widget class="QPushButton" name="Exit_4">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>150</y>
-        <width>621</width>
-        <height>311</height>
+        <x>160</x>
+        <y>220</y>
+        <width>75</width>
+        <height>25</height>
        </rect>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+      <property name="text">
+       <string>Exit</string>
       </property>
      </widget>
      <widget class="QTextEdit" name="textEdit_4">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>50</y>
-        <width>631</width>
-        <height>71</height>
+        <x>20</x>
+        <y>20</y>
+        <width>351</width>
+        <height>181</height>
        </rect>
       </property>
       <property name="acceptDrops">
        <bool>false</bool>
-      </property>
-      <property name="autoFillBackground">
-       <bool>true</bool>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Drop Files or folders here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enter Information Here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_4">
+    <widget class="QWidget" name="special">
      <attribute name="title">
-      <string>Merge</string>
+      <string>Special</string>
      </attribute>
-     <widget class="QFrame" name="frame_5">
+     <widget class="QPushButton" name="Exit_5">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>150</y>
-        <width>621</width>
-        <height>311</height>
+        <x>160</x>
+        <y>220</y>
+        <width>75</width>
+        <height>25</height>
        </rect>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+      <property name="text">
+       <string>Exit</string>
       </property>
      </widget>
      <widget class="QTextEdit" name="textEdit_5">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>50</y>
-        <width>631</width>
-        <height>71</height>
+        <y>20</y>
+        <width>351</width>
+        <height>181</height>
        </rect>
       </property>
       <property name="acceptDrops">
        <bool>false</bool>
-      </property>
-      <property name="autoFillBackground">
-       <bool>true</bool>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Drop Files or folders here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enter Information Here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_5">
+    <widget class="QWidget" name="statistics">
      <attribute name="title">
-      <string>Edit</string>
+      <string>Statistics</string>
      </attribute>
-     <widget class="QFrame" name="frame">
+     <widget class="QPushButton" name="Exit_6">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>140</y>
-        <width>621</width>
-        <height>311</height>
+        <x>160</x>
+        <y>220</y>
+        <width>75</width>
+        <height>25</height>
        </rect>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+      <property name="text">
+       <string>Exit</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEdit">
+     <widget class="QTextEdit" name="textEdit_6">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>40</y>
-        <width>631</width>
-        <height>71</height>
+        <x>20</x>
+        <y>20</y>
+        <width>351</width>
+        <height>181</height>
        </rect>
       </property>
       <property name="acceptDrops">
        <bool>false</bool>
-      </property>
-      <property name="autoFillBackground">
-       <bool>true</bool>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Drop Files or folders here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enter Information Here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QFrame" name="confirm">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>550</y>
-      <width>431</width>
-      <height>23</height>
+      <x>10</x>
+      <y>230</y>
+      <width>381</width>
+      <height>281</height>
      </rect>
     </property>
-    <property name="text">
-     <string>GO GO GO</string>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
     </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QDialogButtonBox" name="replace">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>110</y>
+       <width>161</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::No|QDialogButtonBox::Yes</set>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="Info">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>331</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You have selected &amp;lt;Insert the part that is passed in&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;Give details on what it is going to do&amp;gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Do you want to replace existing files&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QDialogButtonBox" name="confirm_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>230</y>
+       <width>341</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>Merge</tabstop>
+  <tabstop>Split</tabstop>
+  <tabstop>Compress</tabstop>
+  <tabstop>OCR</tabstop>
+  <tabstop>Special</tabstop>
+  <tabstop>Statistics</tabstop>
+  <tabstop>Help</tabstop>
+  <tabstop>treeWidget</tabstop>
+  <tabstop>Selectioned</tabstop>
+  <tabstop>treeWidget_2</tabstop>
+  <tabstop>Helpwidget</tabstop>
+  <tabstop>information</tabstop>
+  <tabstop>Exit</tabstop>
+  <tabstop>textEdit_2</tabstop>
+  <tabstop>Exit_2</tabstop>
+  <tabstop>textEdit_3</tabstop>
+  <tabstop>Exit_3</tabstop>
+  <tabstop>textEdit_4</tabstop>
+  <tabstop>Exit_4</tabstop>
+  <tabstop>textEdit_5</tabstop>
+  <tabstop>Exit_5</tabstop>
+  <tabstop>textEdit_6</tabstop>
+  <tabstop>Exit_6</tabstop>
+  <tabstop>Info</tabstop>
+  <tabstop>textEdit</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Help</sender>
+   <signal>clicked()</signal>
+   <receiver>Helpwidget</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>795</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>754</x>
+     <y>322</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Merge</sender>
+   <signal>clicked()</signal>
+   <receiver>confirm</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>657</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Merge</sender>
+   <signal>released()</signal>
+   <receiver>confirm</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>653</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>109</x>
+     <y>445</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Split</sender>
+   <signal>clicked()</signal>
+   <receiver>confirm</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>643</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Compress</sender>
+   <signal>clicked()</signal>
+   <receiver>confirm</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>343</x>
+     <y>629</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>371</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>OCR</sender>
+   <signal>clicked()</signal>
+   <receiver>confirm</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>461</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Special</sender>
+   <signal>clicked()</signal>
+   <receiver>confirm</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>549</x>
+     <y>646</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>372</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Statistics</sender>
+   <signal>clicked()</signal>
+   <receiver>confirm</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>727</x>
+     <y>646</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>387</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Split</sender>
+   <signal>released()</signal>
+   <receiver>confirm</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>646</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Compress</sender>
+   <signal>released()</signal>
+   <receiver>confirm</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>625</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>353</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>OCR</sender>
+   <signal>released()</signal>
+   <receiver>confirm</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>443</x>
+     <y>631</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>424</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Special</sender>
+   <signal>released()</signal>
+   <receiver>confirm</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>630</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>337</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Statistics</sender>
+   <signal>released()</signal>
+   <receiver>confirm</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>703</x>
+     <y>626</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>320</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>confirm_2</sender>
+   <signal>accepted()</signal>
+   <receiver>confirm</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>311</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>320</x>
+     <y>422</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>confirm_2</sender>
+   <signal>accepted()</signal>
+   <receiver>frame</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>476</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>698</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>confirm_2</sender>
+   <signal>accepted()</signal>
+   <receiver>Options</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>605</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit</sender>
+   <signal>clicked()</signal>
+   <receiver>Helpwidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>681</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>841</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Helpwidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>318</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>807</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit_3</sender>
+   <signal>clicked()</signal>
+   <receiver>Helpwidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>687</x>
+     <y>324</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>821</x>
+     <y>322</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit_4</sender>
+   <signal>clicked()</signal>
+   <receiver>Helpwidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>684</x>
+     <y>320</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>821</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit_5</sender>
+   <signal>clicked()</signal>
+   <receiver>Helpwidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>674</x>
+     <y>322</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>815</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit_6</sender>
+   <signal>clicked()</signal>
+   <receiver>Helpwidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>694</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>829</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>confirm_2</sender>
+   <signal>accepted()</signal>
+   <receiver>dnd</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>231</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>833</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>textEdit</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>658</x>
+     <y>602</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>724</x>
+     <y>529</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
