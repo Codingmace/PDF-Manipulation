@@ -1,0 +1,223 @@
+            <child>
+              <object class="ttk.Notebook.Tab" id="TabJoin">
+                <property name="text" translatable="yes">Join Files</property>
+                <child>
+                  <object class="ttk.Frame" id="JoinFrame">
+                    <property name="height">200</property>
+                    <property name="width">200</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="propagate">True</property>
+                      <property name="row">0</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Label" id="SourceDocsLabel">
+                        <property name="font">TkHeadingFont</property>
+                        <property name="justify">left</property>
+                        <property name="padding">0 10 0 5</property>
+                        <property name="text" translatable="yes">Source Documents</property>
+                        <layout>	
+                          <property name="column">0</property>
+                          <property name="columnspan">5</property>
+                          <property name="padx">10</property>
+                          <property name="propagate">True</property>
+                          <property name="row">0</property>
+                          <property name="sticky">w</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Treeview" id="JoinFilesList">
+                        <property name="height">8</property>
+                        <property name="selectmode">extended</property>
+                        <bind add="" handler="jointab_on_file_select" sequence="&lt;&lt;TreeviewSelect&gt;&gt;" />
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="columnspan">5</property>
+                          <property name="padx">10</property>
+                          <property name="propagate">True</property>
+                          <property name="row">1</property>
+                        </layout>
+                        <child>
+                          <object class="ttk.Treeview.Column" id="IconColumn">
+                            <property name="column_anchor">w</property>
+                            <property name="heading_anchor">w</property>
+                            <property name="minwidth">0</property>
+                            <property name="stretch">false</property>
+                            <property name="text" translatable="yes">Column_1</property>
+                            <property name="tree_column">true</property>
+                            <property name="visible">false</property>
+                            <property name="width">0</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="ttk.Treeview.Column" id="FileNameColumn">
+                            <property name="column_anchor">w</property>
+                            <property name="heading_anchor">w</property>
+                            <property name="minwidth">20</property>
+                            <property name="stretch">true</property>
+                            <property name="text" translatable="yes">Filename</property>
+                            <property name="tree_column">false</property>
+                            <property name="visible">true</property>
+                            <property name="width">390</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="ttk.Treeview.Column" id="PageSelectColumn">
+                            <property name="column_anchor">w</property>
+                            <property name="heading_anchor">w</property>
+                            <property name="minwidth">20</property>
+                            <property name="stretch">true</property>
+                            <property name="text" translatable="yes">Pages</property>
+                            <property name="tree_column">false</property>
+                            <property name="visible">true</property>
+                            <property name="width">85</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Label" id="CurrentFileInfoLabel">
+                        <property name="anchor">w</property>
+                        <property name="justify">right</property>
+                        <property name="padding">0 10</property>
+                        <property name="textvariable">string:current_file_info</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="columnspan">3</property>
+                          <property name="padx">10</property>
+                          <property name="propagate">True</property>
+                          <property name="row">2</property>
+                          <property name="sticky">w</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Label" id="JoinPagesFieldLabel">
+                        <property name="text" translatable="yes">Pages:</property>
+                        <property name="underline">0</property>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="propagate">True</property>
+                          <property name="row">2</property>
+                          <property name="sticky">e</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Entry" id="JoinPagesField">
+                        <property name="font">TkDefaultFont</property>
+                        <property name="textvariable">string:page_select_input</property>
+                        <property name="width">10</property>
+                        <bind add="" handler="jointab_enter_page_selection" sequence="&lt;FocusOut&gt;" />
+                        <layout>
+                          <property name="column">4</property>
+                          <property name="padx">10</property>
+                          <property name="propagate">True</property>
+                          <property name="row">2</property>
+                          <property name="sticky">e</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="JoinAddButton">
+                        <property name="command">jointab_add_file</property>
+                        <property name="text" translatable="yes">Add…</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="padx">5</property>
+                          <property name="propagate">True</property>
+                          <property name="row">3</property>
+                          <property name="sticky">e</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="JoinSortButton">
+                        <property name="text" translatable="yes">Sort</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="padx">5</property>
+                          <property name="propagate">True</property>
+                          <property name="row">3</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="JoinRemoveButton">
+                        <property name="command">jointab_remove</property>
+                        <property name="text" translatable="yes">Remove</property>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="padx">5</property>
+                          <property name="propagate">True</property>
+                          <property name="row">3</property>
+                          <property name="sticky">w</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="JoinMoveUpButton">
+                        <property name="command">jointab_move_up</property>
+                        <property name="text" translatable="yes">Move Up</property>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="propagate">True</property>
+                          <property name="row">3</property>
+                          <property name="sticky">e</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="JoinMoveDownButton">
+                        <property name="command">jointab_move_down</property>
+                        <property name="text" translatable="yes">Move Down</property>
+                        <layout>
+                          <property name="column">4</property>
+                          <property name="padx">5</property>
+                          <property name="propagate">True</property>
+                          <property name="row">3</property>
+                          <property name="sticky">w</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Frame" id="JoinCommandFrame">
+                        <property name="padding">0 20</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="columnspan">5</property>
+                          <property name="pady">20</property>
+                          <property name="propagate">True</property>
+                          <property name="row">4</property>
+                        </layout>
+                        <child>
+                          <object class="ttk.Button" id="JoinSaveButton">
+                            <property name="command">jointab_save_as</property>
+                            <property name="text" translatable="yes">Save As…</property>
+                            <layout>
+                              <property name="column">0</property>
+                              <property name="padx">10</property>
+                              <property name="propagate">True</property>
+                              <property name="row">0</property>
+                            </layout>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="ttk.Button" id="JoinExitButton">
+                            <property name="command">quit</property>
+                            <property name="text" translatable="yes">Exit</property>
+                            <layout>
+                              <property name="column">1</property>
+                              <property name="padx">10</property>
+                              <property name="propagate">True</property>
+                              <property name="row">0</property>
+                            </layout>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>

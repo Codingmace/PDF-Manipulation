@@ -1,0 +1,28 @@
+Pdf2Text - Works and Has Gui
+	- Needs to print to file
+	- Don't select when going to the new file
+
+Pdf2docx - Needs to be looked at
+
+Word2PDF - Doesn't have GUI
+	- Needs to be tested
+pdfSpliter - Works
+	- Needs to have option of all files split
+
+PNG2PDF - Comes up
+	- Could have an issue a little bit later on
+
+PyPDF-Builder - Going to be working based on this a little bit
+
+
+
+
+_Issues
+- Pdf2Excel
+	- Missing the import gi (gtk I think)
+- PDFConverter
+	- Issue with converter (Maybe outdated)
+- PDF2JPg - Works
+	- Need to add ghost script to be able to finish the conversion
+
+	
