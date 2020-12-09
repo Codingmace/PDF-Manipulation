@@ -1,5 +1,5 @@
 APPNAME = 'pypdfbuilder'
-APPVERSION = '0.9.1'
+APPVERSION = '1.0'
 
 # Constants for indexing into the values stored in the TreeView (e.g. in the Join View)
 

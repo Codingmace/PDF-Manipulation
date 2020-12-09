@@ -706,25 +706,21 @@ class PyPDFBuilderApplication:
     def status_text(self, val):
         self.__status_text_variable.set(val)
 
-    # boy oh boy if there's anyway to do these callsbacks more elegantly, please let me gain that knowledge!
+    # Their has to be better way but for now this works
     def select_tab_join(self, *args, **kwargs):
-        '''Gets called when menu item "View > Join Files" is selected.
-        Pops appropriate tab into view.'''
+    	''' Called when menu item "View" > "Join Files" '''
         self.__notebook.select(self.__tabs['join'])
 
     def select_tab_split(self, *args, **kwargs):
-        '''Gets called when menu item "View > Split File" is selected.
-        Pops appropriate tab into view.'''
+    	''' Called when menu item "View" > "Split File" '''
         self.__notebook.select(self.__tabs['split'])
 
     def select_tab_bg(self, *args, **kwargs):
-        '''Gets called when menu item "View > Background/Stamp/Number" is selected.
-        Pops appropriate tab into view.'''
+    	''' Called when menu item "View" > "Background/Stamp/Number" '''
         self.__notebook.select(self.__tabs['bg'])
 
     def select_tab_rotate(self, *args, **kwargs):
-        '''Gets called when menu item "View > Rotate Pages" is selected.
-        Pops appropriate tab into view.'''
+    	''' Called when menu item "View" > "Rotate Pages" '''
         self.__notebook.select(self.__tabs['rotate'])
 
     def jointab_add_file(self):
@@ -790,10 +786,7 @@ class PyPDFBuilderApplication:
         self.__bgtab.choose_stamp_option()
 
     def bgtab_choose_number_option(self):
-        '''
-        Numbering pages is currently not supported by PyPDF2 so this option will remain
-        disabled for now
-        '''
+    	''' Will ignore because it doesn't exist '''
         pass
 
     def bgtab_choose_source_file(self):
