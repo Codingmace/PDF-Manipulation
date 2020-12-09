@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 
 import os
@@ -139,7 +140,7 @@ class PDFPageInfo:
         basename = os.path.basename(self.__filepath)
         concat_filename = f'{basename[0:max_length]}'
         if len(basename) > max_length:
-            concat_filename += 'â€¦'
+            concat_filename += '…'
         return concat_filename
 
     def pdf_info_string(self, concat_length=35):
@@ -192,7 +193,7 @@ class PDFInfo:
         basename = os.path.basename(self.__filepath)
         concat_filename = f'{basename[0:max_length]}'
         if len(basename) > max_length:
-            concat_filename += 'â€¦'
+            concat_filename += '…'
         return concat_filename
 
     def pdf_info_string(self, concat_length=35):
@@ -235,7 +236,7 @@ class BgTabManager:
 
     def choose_source_file(self):
         choose_source_file = self.parent.get_file_dialog(
-            func=filedialog.askopenfilename, widget_title='Choose Source PDF â€¦')
+            func=filedialog.askopenfilename, widget_title='Choose Source PDF …')
         if choose_source_file:
             self.__source_filepath = choose_source_file
             self.__source_file_info = PDFPageInfo(self.__source_filepath)
@@ -243,7 +244,7 @@ class BgTabManager:
 
     def choose_bg_file(self):
         choose_bg_file = self.parent.get_file_dialog(
-            func=filedialog.askopenfilename, widget_title='Choose Background PDF â€¦')
+            func=filedialog.askopenfilename, widget_title='Choose Background PDF …')
         if choose_bg_file:
             self.__bg_filepath = choose_bg_file
             self.__bg_file_info = PDFPageInfo(self.__bg_filepath)
@@ -257,14 +258,14 @@ class BgTabManager:
 
     def choose_stamp_option(self):
         self.__only_first_button_label.set('Apply stamp to only the first page')
-        self.__bg_button_label.set('Choose Stamp â€¦')
+        self.__bg_button_label.set('Choose Stamp …')
 
     def choose_bg_option(self):
         self.__only_first_button_label.set('Apply background to only the first page')
-        self.__bg_button_label.set('Choose Background â€¦')
+        self.__bg_button_label.set('Choose Background …')
 
     def save_as(self):
-        save_filepath = self.parent.get_file_dialog(func=filedialog.asksaveasfilename, widget_title='Save New PDF to â€¦')
+        save_filepath = self.parent.get_file_dialog(func=filedialog.asksaveasfilename, widget_title='Save New PDF to …')
         if self.__source_filepath and self.__bg_filepath:
             out_pdf = PdfFileWriter()
             command = self.__bg_command.get()
@@ -317,7 +318,7 @@ class SplitTabManager:
 
     def open_file(self):
         choose_split_file = self.parent.get_file_dialog(
-            func=filedialog.askopenfilename, widget_title='Choose PDF to Splitâ€¦')
+            func=filedialog.askopenfilename, widget_title='Choose PDF to Split…')
         if choose_split_file:
             self.__split_filepath = choose_split_file
             self.__split_file_info = PDFInfo(self.__split_filepath)
@@ -369,7 +370,7 @@ class RotateTabManager:
 
     def open_file(self):
         chose_rotate_file = self.parent.get_file_dialog(
-            func=filedialog.askopenfilename, widget_title='Choose PDF to Rotateâ€¦')
+            func=filedialog.askopenfilename, widget_title='Choose PDF to Rotate…')
         if chose_rotate_file:
             self.__rotate_filepath = chose_rotate_file
             self.__rotate_file_info = PDFPageInfo(self.__rotate_filepath)
@@ -385,7 +386,7 @@ class RotateTabManager:
 
     def save_as(self):
         page_range = (self.__rotate_from_page_widget.get()-1, self.__rotate_to_page_widget.get())
-        save_filepath = self.parent.get_file_dialog(func=filedialog.asksaveasfilename, widget_title='Save New PDF toâ€¦')
+        save_filepath = self.parent.get_file_dialog(func=filedialog.asksaveasfilename, widget_title='Save New PDF to…')
         if self.__rotate_filepath:
             in_pdf = PdfFileReader(open(self.__rotate_filepath, "rb"))
             out_pdf = PdfFileWriter()
@@ -452,7 +453,7 @@ class JoinTabManager:
     def __parse_page_select(self, page_select):
         '''
         As this method deals with raw user input, there will have to be a whole lot of error checking
-        built into this function at a later time. Really don't look forward to thisâ€¦ at all.
+        built into this function at a later time. Really don't look forward to this… at all.
         '''
         for page_range in page_select.replace(' ', '').split(','):
             if '-' in page_range:
@@ -464,7 +465,7 @@ class JoinTabManager:
     def add_file(self):
         add_filepaths = self.parent.get_file_dialog(
             func=filedialog.askopenfilenames,
-            widget_title='Choose PDFs to Addâ€¦'
+            widget_title='Choose PDFs to Add…'
         )
         if add_filepaths:
             for filepath in list(add_filepaths):
@@ -476,7 +477,7 @@ class JoinTabManager:
     def save_as(self):
         if len(self.__get_join_files()) > 0:
             save_filepath = self.parent.get_file_dialog(
-                func=filedialog.asksaveasfilename, widget_title='Save Joined PDF toâ€¦')
+                func=filedialog.asksaveasfilename, widget_title='Save Joined PDF to…')
             if save_filepath:
                 merger = PdfFileMerger()
                 for f in self.__get_join_files():
@@ -567,7 +568,7 @@ class JoinDirManager:
     def __parse_page_select(self, page_select):
         '''
         As this method deals with raw user input, there will have to be a whole lot of error checking
-        built into this function at a later time. Really don't look forward to thisâ€¦ at all.
+        built into this function at a later time. Really don't look forward to this… at all.
         '''
         for page_range in page_select.replace(' ', '').split(','):
             if '-' in page_range:
@@ -579,7 +580,7 @@ class JoinDirManager:
     def add_file(self):
         add_filepaths = self.parent.get_file_dialog(
             func=filedialog.askopenfilenames,
-            widget_title='Choose PDFs to Addâ€¦'
+            widget_title='Choose PDFs to Add…'
         )
         if add_filepaths:
             for filepath in list(add_filepaths):
@@ -592,7 +593,7 @@ class JoinDirManager:
     def save_as(self):
         if len(self.__get_join_files()) > 0:
             save_filepath = self.parent.get_file_dialog(
-                func=filedialog.asksaveasfilename, widget_title='Save Joined PDF toâ€¦')
+                func=filedialog.asksaveasfilename, widget_title='Save Joined PDF to…')
             if save_filepath:
                 merger = PdfFileMerger()
                 for f in self.__get_join_files():
@@ -792,7 +793,7 @@ class PyPDFBuilderApplication:
     def cancel_settings(self, *args, **kwargs):
         pass
 
-    def get_file_dialog(self, func, widget_title='Choose File(s) â€¦'):
+    def get_file_dialog(self, func, widget_title='Choose File(s) …'):
         f = func(
             initialdir=self.user_data.filedialog_path,
             title=widget_title,

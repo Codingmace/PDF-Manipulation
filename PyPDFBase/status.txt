@@ -1,3 +1,6 @@
 Modify to have the full folder part
 Then replace everything adding in convert
 Display full file names for folders
+
+
+- Add in again the folder so I can merge multiple documents across multiple folders at once
