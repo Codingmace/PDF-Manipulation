@@ -27,34 +27,6 @@ CONFIG_DIR = appdirs.user_config_dir(APPNAME)
 DATA_DIR = appdirs.user_data_dir(APPNAME)
 
 
-class SettingsData:
-    '''Class for managing current user's application settings'''
-
-    def __init__(self):
-        self.__settings_data_path = os.path.join(CONFIG_DIR, 'data.json')
-
-
-    def __get_settings_data(self):
-        '''Method to retrieve current user's settings data '''
-        try:
-            with (open(self.__settings_data_path, 'r')) as datafile:
-                settings_data = json.load(datafile)
-            # make sure all values are returned. If a key is non-existant, fill it with default value
-            for key, val in self.__settings_defaults.items():
-                if key not in settings_data:
-                    settings_data[key] = val
-        except FileNotFoundError:
-            settings_data = self.__settings_defaults
-        return settings_data
-
-    def __save_settings_data(self):
-        if not os.path.exists(os.path.dirname(self.__settings_data_path)):
-            plPath(os.path.dirname(self.__settings_data_path)).mkdir(parents=True, exist_ok=True)
-        try:
-            with (open(self.__settings_data_path, 'w')) as datafile:
-                json.dump(self.__settings_data, datafile)
-        except FileNotFoundError:
-            print('Something went horribly wrong while trying to save your current user data.')
 
 
 class UserData:
@@ -671,8 +643,8 @@ class PyPDFBuilderApplication:
         self.builder.add_from_file(os.path.join(CURRENT_DIR, 'mainwindow.ui'))
 
         self.__mainwindow = self.builder.get_object('MainWindow')
-        self.__settings_dialog = self.builder.get_object('SettingsDialog', self.__mainwindow)
         self.__notebook = self.builder.get_object('AppNotebook')
+ 		# ''' Add in the shortcut key binding '''
         self.__tabs = {
             'join': self.builder.get_object('JoinFrame'),
             'joinDir': self.builder.get_object('JoinDirFrame'),
@@ -687,7 +659,6 @@ class PyPDFBuilderApplication:
         self.builder.connect_callbacks(self)
 
         self.user_data = UserData()
-        self.settings_data = SettingsData()
 
         self.__jointab = JoinTabManager(self)
         self.__joinDtab = JoinDirManager(self)
@@ -709,19 +680,19 @@ class PyPDFBuilderApplication:
     # Their has to be better way but for now this works
     def select_tab_join(self, *args, **kwargs):
     	''' Called when menu item "View" > "Join Files" '''
-        self.__notebook.select(self.__tabs['join'])
+    	self.__notebook.select(self.__tabs['join'])
 
     def select_tab_split(self, *args, **kwargs):
     	''' Called when menu item "View" > "Split File" '''
-        self.__notebook.select(self.__tabs['split'])
+    	self.__notebook.select(self.__tabs['split'])
 
     def select_tab_bg(self, *args, **kwargs):
     	''' Called when menu item "View" > "Background/Stamp/Number" '''
-        self.__notebook.select(self.__tabs['bg'])
+    	self.__notebook.select(self.__tabs['bg'])
 
     def select_tab_rotate(self, *args, **kwargs):
     	''' Called when menu item "View" > "Rotate Pages" '''
-        self.__notebook.select(self.__tabs['rotate'])
+    	self.__notebook.select(self.__tabs['rotate'])
 
     def jointab_add_file(self):
         self.__jointab.add_file()
@@ -787,7 +758,7 @@ class PyPDFBuilderApplication:
 
     def bgtab_choose_number_option(self):
     	''' Will ignore because it doesn't exist '''
-        pass
+    	pass
 
     def bgtab_choose_source_file(self):
         self.__bgtab.choose_source_file()
