@@ -220,9 +220,6 @@ class BgTabManager:
         self.__source_file_info_widget = self.parent.builder.get_variable('source_file_info')
         self.__bg_file_info_widget = self.parent.builder.get_variable('bg_file_info')
         self.__bg_command = self.parent.builder.get_variable('bg_command')
-        self.__bg_only_first_page = self.parent.builder.get_variable('bg_only_first_page')
-        self.__bg_button_label = self.parent.builder.get_variable('bg_options_bg_button')
-        self.__only_first_button_label = self.parent.builder.get_variable('bg_options_only_first_button')
         self.__bg_command.set('BG')
 
     @property
@@ -241,27 +238,11 @@ class BgTabManager:
             self.__source_file_info = PDFPageInfo(self.__source_filepath)
             self.__show_source_file_info()
 
-    def choose_bg_file(self):
-        choose_bg_file = self.parent.get_file_dialog(
-            func=filedialog.askopenfilename, widget_title='Choose Background PDF …')
-        if choose_bg_file:
-            self.__bg_filepath = choose_bg_file
-            self.__bg_file_info = PDFPageInfo(self.__bg_filepath)
-            self.__show_bg_file_info()
-
     def __show_source_file_info(self):
         self.__source_file_info_widget.set(self.__source_file_info.pdf_info_string(concat_length=80))
 
     def __show_bg_file_info(self):
         self.__bg_file_info_widget.set(self.__bg_file_info.pdf_info_string(concat_length=80))
-
-    def choose_stamp_option(self):
-        self.__only_first_button_label.set('Apply stamp to only the first page')
-        self.__bg_button_label.set('Choose Stamp …')
-
-    def choose_bg_option(self):
-        self.__only_first_button_label.set('Apply background to only the first page')
-        self.__bg_button_label.set('Choose Background …')
 
     def save_as(self):
         save_filepath = self.parent.get_file_dialog(func=filedialog.asksaveasfilename, widget_title='Save New PDF to …')
@@ -276,10 +257,10 @@ class BgTabManager:
                     source_pdf = PdfFileReader(source_pdf_stream)
                     bg_pdf = PdfFileReader(bg_pdf_stream)
                     if not self.__bg_only_first_page.get() or (self.__bg_only_first_page.get() and p < 1):
-                        if command == 'STAMP':
+                        if command == 'DECRYPT':
                             top_page = bg_pdf.getPage(0)
                             bottom_page = source_pdf.getPage(p)
-                        elif command == 'BG':
+                        elif command == 'ENCRYPT`':
                             top_page = source_pdf.getPage(p)
                             bottom_page = bg_pdf.getPage(0)
                         bottom_page.mergePage(top_page)
@@ -682,6 +663,10 @@ class PyPDFBuilderApplication:
     	''' Called when menu item "View" > "Join Files" '''
     	self.__notebook.select(self.__tabs['join'])
 
+    def select_tab_joinDir(self, *args, **kwargs):
+    	''' Called when menu item "View" > "Rotate Pages" '''
+    	self.__notebook.select(self.__tabs['joinDir'])
+
     def select_tab_split(self, *args, **kwargs):
     	''' Called when menu item "View" > "Split File" '''
     	self.__notebook.select(self.__tabs['split'])
@@ -753,8 +738,8 @@ class PyPDFBuilderApplication:
     def bgtab_choose_bg_option(self):
         self.__bgtab.choose_bg_option()
 
-    def bgtab_choose_stamp_option(self):
-        self.__bgtab.choose_stamp_option()
+    def bgtab_choose_dbg_option(self):
+        self.__bgtab.choose_dbg_option()
 
     def bgtab_choose_number_option(self):
     	''' Will ignore because it doesn't exist '''
