@@ -12,7 +12,7 @@ macholib==1.9
 MarkupSafe==1.0
 packaging==17.1
 pefile==2017.11.5
-Pygments==2.2.0
+Pygments==2.7.4
 pygubu==0.9.8.2
 PyInstaller==3.3.1
 pyparsing==2.2.0
